@@ -10,9 +10,13 @@
   --gs-color-text-muted: #555950;
   --gs-color-text-placeholder: #777b73;
   --gs-color-border: #dedfd9;
+  --gs-color-border-hover: #c4c6be;
+  --gs-color-sand-light: #efece6;
+  --gs-color-on-brand: #ffffff;
   --gs-color-brand-fill: #ef5350;
   --gs-color-brand-text: #b9363b;
   --gs-color-brand-soft: #fde9e7;
+  --gs-color-brand-glow: rgb(239 83 80 / 22%);
   --gs-color-support: #2f6b55;
   --gs-color-support-soft: #e6f0ea;
   --gs-color-info: #3f627a;

@@ -16,36 +16,85 @@
         <div class="gpm-summary-meta"><span><i data-lucide="calendar-days" aria-hidden="true"></i>6 weeks</span><b aria-hidden="true"></b><span>3 milestones</span><b aria-hidden="true"></b><span><i data-lucide="circle-check" aria-hidden="true"></i>Starting point saved</span></div>
       </section>
 
-      <section class="gpm-road-surface">
-        <div class="gpm-road-head"><div><h3 class="gpm-road-title">Your six-week road</h3><p class="gpm-road-hint">Tap a week to see its action.</p></div><span class="gpm-start-marker" id="gpm-start-marker">Start here</span></div>
-        <div class="gpm-map" aria-label="Six weeks arranged across three milestones">
-          <svg class="gpm-road-svg" viewBox="0 0 320 590" preserveAspectRatio="none" role="img" aria-label="A winding road connecting weeks one through six">
-            <path class="gpm-road-base" d="M80 74 C80 111 240 101 240 150 C240 194 240 221 240 270 C240 307 80 297 80 346 C80 390 80 417 80 466 C80 503 240 493 240 542"></path>
-            <path class="gpm-road-center" d="M80 74 C80 111 240 101 240 150 C240 194 240 221 240 270 C240 307 80 297 80 346 C80 390 80 417 80 466 C80 503 240 493 240 542"></path>
-          </svg>
-
-          <div class="gpm-milestone-label gpm-m1"><i data-lucide="sunrise" aria-hidden="true"></i>Milestone 1 · Reduce strain</div>
-          <div class="gpm-milestone-label gpm-m2"><i data-lucide="search" aria-hidden="true"></i>Milestone 2 · Check the pattern</div>
-          <div class="gpm-milestone-label gpm-m3"><i data-lucide="check-check" aria-hidden="true"></i>Milestone 3 · Carry it forward</div>
-
-          <button class="gpm-week-node gpm-left-node gpm-w1" type="button" aria-label="Week 1, begin 15 to 45 minutes after breakfast" aria-pressed="true" data-week="0"><i data-lucide="sunrise" aria-hidden="true"></i><span>1</span></button>
-          <div class="gpm-week-copy gpm-copy-right gpm-c1"><b>Week 1</b><strong>Begin 15–45 min after breakfast</strong></div>
-
-          <button class="gpm-week-node gpm-right-node gpm-w2" type="button" aria-label="Week 2, repeat without another change" aria-pressed="false" data-week="1"><i data-lucide="repeat-2" aria-hidden="true"></i><span>2</span></button>
-          <div class="gpm-week-copy gpm-copy-left gpm-c2"><b>Week 2</b><strong>Repeat without another change</strong></div>
-
-          <button class="gpm-week-node gpm-right-node gpm-w3" type="button" aria-label="Week 3, check stool form and emptying" aria-pressed="false" data-week="2"><i data-lucide="clipboard-list" aria-hidden="true"></i><span>3</span></button>
-          <div class="gpm-week-copy gpm-copy-left gpm-c3"><b>Week 3</b><strong>Check stool form and emptying</strong></div>
-
-          <button class="gpm-week-node gpm-left-node gpm-w4" type="button" aria-label="Week 4, prepare a pelvic floor care question" aria-pressed="false" data-week="3"><i data-lucide="message-square-text" aria-hidden="true"></i><span>4</span></button>
-          <div class="gpm-week-copy gpm-copy-right gpm-c4"><b>Week 4</b><strong>Prepare a pelvic floor care question</strong></div>
-
-          <button class="gpm-week-node gpm-left-node gpm-w5" type="button" aria-label="Week 5, keep only the step that helped" aria-pressed="false" data-week="4"><i data-lucide="list-checks" aria-hidden="true"></i><span>5</span></button>
-          <div class="gpm-week-copy gpm-copy-right gpm-c5"><b>Week 5</b><strong>Keep only the step that helped</strong></div>
-
-          <button class="gpm-week-node gpm-right-node gpm-w6" type="button" aria-label="Week 6, compare straining and bloating" aria-pressed="false" data-week="5"><i data-lucide="clipboard-check" aria-hidden="true"></i><span>6</span></button>
-          <div class="gpm-week-copy gpm-copy-left gpm-c6"><b>Week 6</b><strong>Compare straining and bloating</strong></div>
+      <section class="gpm-spine" aria-label="Six weeks arranged across three milestones">
+        <div class="gpm-spine-head">
+          <p class="gpm-spine-hint">Tap a week to see its action.</p>
+          <span class="gpm-start-marker" id="gpm-start-marker">Week 2 in progress</span>
         </div>
+
+        <article class="gpm-unit">
+          <div class="gpm-banner is-current">
+            <span class="gpm-banner-icon" aria-hidden="true"><i data-lucide="clipboard-list"></i></span>
+            <div class="gpm-banner-copy">
+              <div class="gpm-banner-kicker">Milestone 1 · Weeks 1–2</div>
+              <h3 class="gpm-banner-title">Build a clear baseline</h3>
+              <p class="gpm-banner-desc">Record stool form, straining, and incomplete emptying after bowel movements. Establish a morning routine that fits your day.</p>
+            </div>
+          </div>
+          <div class="gpm-path is-walked">
+            <svg class="gpm-trail" viewBox="0 0 342 196" preserveAspectRatio="none" aria-hidden="true">
+              <path class="gpm-trail-base" d="M110 56 C110 110 232 86 232 140"></path>
+              <path class="gpm-trail-walk" d="M110 56 C110 110 232 86 232 140"></path>
+            </svg>
+            <button class="gpm-wk is-done gpm-wk-start" type="button" data-week="0" aria-label="Week 1, evidence recorded. Begin 15 to 45 minutes after breakfast.">
+              <span class="gpm-disc"><i data-lucide="check" aria-hidden="true"></i></span>
+              <span class="gpm-wk-label">Week 1</span>
+            </button>
+            <button class="gpm-wk is-now gpm-wk-end" type="button" data-week="1" aria-current="step" aria-label="Week 2, current week. Repeat without another change. Review Friday.">
+              <span class="gpm-here">You are here</span>
+              <span class="gpm-disc">2<span class="gpm-gate" aria-hidden="true"><i data-lucide="flag"></i></span></span>
+              <span class="gpm-wk-label">Week 2 · Review Friday</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="gpm-unit">
+          <div class="gpm-banner is-future">
+            <span class="gpm-banner-icon" aria-hidden="true"><i data-lucide="flask-conical"></i></span>
+            <div class="gpm-banner-copy">
+              <div class="gpm-banner-kicker">Milestone 2 · Weeks 3–4</div>
+              <h3 class="gpm-banner-title">Test one practical change</h3>
+              <p class="gpm-banner-desc">Use one focused experiment while keeping the rest of the Plan steady where practical.</p>
+            </div>
+          </div>
+          <div class="gpm-path gpm-path-flip">
+            <svg class="gpm-trail" viewBox="0 0 342 196" preserveAspectRatio="none" aria-hidden="true">
+              <path class="gpm-trail-base" d="M232 56 C232 110 110 86 110 140"></path>
+            </svg>
+            <button class="gpm-wk is-next gpm-wk-start" type="button" data-week="2" aria-label="Week 3, next. Check stool form and emptying.">
+              <span class="gpm-disc">3</span>
+              <span class="gpm-wk-label">Week 3</span>
+            </button>
+            <button class="gpm-wk is-ahead gpm-wk-end" type="button" data-week="3" aria-label="Week 4. Prepare a pelvic floor care question.">
+              <span class="gpm-disc">4</span>
+              <span class="gpm-wk-label">Week 4</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="gpm-unit">
+          <div class="gpm-banner is-future">
+            <span class="gpm-banner-icon" aria-hidden="true"><i data-lucide="list-checks"></i></span>
+            <div class="gpm-banner-copy">
+              <div class="gpm-banner-kicker">Milestone 3 · Weeks 5–6</div>
+              <h3 class="gpm-banner-title">Review and carry it forward</h3>
+              <p class="gpm-banner-desc">Keep the morning step that helped, drop what did not, and repeat the same measures you started with.</p>
+            </div>
+          </div>
+          <div class="gpm-path">
+            <svg class="gpm-trail" viewBox="0 0 342 196" preserveAspectRatio="none" aria-hidden="true">
+              <path class="gpm-trail-base" d="M110 56 C110 110 232 86 232 140"></path>
+            </svg>
+            <button class="gpm-wk is-ahead gpm-wk-start" type="button" data-week="4" aria-label="Week 5. Keep only the step that helped.">
+              <span class="gpm-disc">5</span>
+              <span class="gpm-wk-label">Week 5</span>
+            </button>
+            <button class="gpm-wk is-ahead gpm-wk-end" type="button" data-week="5" aria-label="Week 6. Compare straining and bloating.">
+              <span class="gpm-disc">6</span>
+              <span class="gpm-wk-label">Week 6</span>
+            </button>
+          </div>
+        </article>
       </section>
 
       <div class="gpm-action-dock" aria-label="Plan actions">

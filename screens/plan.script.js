@@ -8,14 +8,14 @@
       const startMarker=root.querySelector('#gpm-start-marker');
       const objectiveTitle=root.querySelector('#gpm-objective');
       const nodes=[...root.querySelectorAll('[data-week]')];
-      const state={objective:'Less straining, without more bloating.',pace:'Balanced',selectedWeek:0,activeItemId:null,replaceItemId:null};
+      const state={objective:'Less straining, without more bloating.',pace:'Balanced',selectedWeek:1,currentWeek:1,activeItemId:null,replaceItemId:null};
       const weeks=[
-        {milestone:'Milestone 1 · Reduce strain',title:'Begin after breakfast',evidence:'Start 15 to 45 minutes after breakfast. Put your feet on a small stool, relax, and avoid forcing. Then record straining and whether you felt fully emptied.',items:[{id:'w1-window',source:'Self care',sourceKey:'self',icon:'sunrise',title:'Bathroom attempt 15–45 min after breakfast',time:'Morning',days:'5 days'}]},
-        {milestone:'Milestone 1 · Reduce strain',title:'Repeat without another change',evidence:'Keep breakfast, current medicines, and the bathroom routine steady. This helps show whether the routine changed straining or bloating.',items:[{id:'w2-repeat',source:'Plan experiment',sourceKey:'review',icon:'repeat-2',title:'Repeat the same morning routine',time:'Morning',days:'5 days'}]},
-        {milestone:'Milestone 2 · Check the pattern',title:'Check stool form and emptying',evidence:'After the next three bowel movements, choose the stool type and record whether you still felt blocked or not fully emptied.',items:[{id:'w3-pattern',source:'Evidence check',sourceKey:'review',icon:'clipboard-list',title:'Record stool type and incomplete emptying',time:'After bathroom',days:'3 times'}]},
-        {milestone:'Milestone 2 · Check the pattern',title:'Prepare a pelvic floor care question',evidence:'Continued straining with stool that is not hard can be a reason to ask about pelvic floor evaluation. This pattern does not diagnose the cause.',items:[{id:'w4-question',source:'Clinical care',sourceKey:'care',icon:'message-square-text',title:'Ask if pelvic floor coordination should be checked',time:'Before your visit',days:'Once'}]},
-        {milestone:'Milestone 3 · Carry it forward',title:'Keep only the step that helped',evidence:'Continue the after-breakfast routine only if repeated days show less straining without more bloating. Keep current medicines unchanged unless your care team changes them.',items:[{id:'w5-keep',source:'Plan review',sourceKey:'review',icon:'list-checks',title:'Continue the helpful routine',time:'Morning',days:'Based on response'}]},
-        {milestone:'Milestone 3 · Carry it forward',title:'Compare straining and bloating',evidence:'Compare the same measures used at the start: days with straining, bloating from 0 to 10, and the feeling of incomplete emptying.',items:[{id:'w6-measure',source:'Plan review',sourceKey:'review',icon:'clipboard-check',title:'Repeat your starting measures',time:'End of week',days:'Once'}]}
+        {milestone:'Milestone 1 · Build a clear baseline',title:'Begin after breakfast',evidence:'Start 15 to 45 minutes after breakfast. Put your feet on a small stool, relax, and avoid forcing. Then record straining and whether you felt fully emptied.',items:[{id:'w1-window',source:'Self care',sourceKey:'self',icon:'sunrise',title:'Bathroom attempt 15–45 min after breakfast',time:'Morning',days:'5 days'}]},
+        {milestone:'Milestone 1 · Build a clear baseline',title:'Repeat without another change',evidence:'Keep breakfast, current medicines, and the bathroom routine steady. This helps show whether the routine changed straining or bloating.',items:[{id:'w2-repeat',source:'Plan experiment',sourceKey:'review',icon:'repeat-2',title:'Repeat the same morning routine',time:'Morning',days:'5 days'}]},
+        {milestone:'Milestone 2 · Test one practical change',title:'Check stool form and emptying',evidence:'After the next three bowel movements, choose the stool type and record whether you still felt blocked or not fully emptied.',items:[{id:'w3-pattern',source:'Evidence check',sourceKey:'review',icon:'clipboard-list',title:'Record stool type and incomplete emptying',time:'After bathroom',days:'3 times'}]},
+        {milestone:'Milestone 2 · Test one practical change',title:'Prepare a pelvic floor care question',evidence:'Continued straining with stool that is not hard can be a reason to ask about pelvic floor evaluation. This pattern does not diagnose the cause.',items:[{id:'w4-question',source:'Clinical care',sourceKey:'care',icon:'message-square-text',title:'Ask if pelvic floor coordination should be checked',time:'Before your visit',days:'Once'}]},
+        {milestone:'Milestone 3 · Review and carry it forward',title:'Keep only the step that helped',evidence:'Continue the after-breakfast routine only if repeated days show less straining without more bloating. Keep current medicines unchanged unless your care team changes them.',items:[{id:'w5-keep',source:'Plan review',sourceKey:'review',icon:'list-checks',title:'Continue the helpful routine',time:'Morning',days:'Based on response'}]},
+        {milestone:'Milestone 3 · Review and carry it forward',title:'Compare straining and bloating',evidence:'Compare the same measures used at the start: days with straining, bloating from 0 to 10, and the feeling of incomplete emptying.',items:[{id:'w6-measure',source:'Plan review',sourceKey:'review',icon:'clipboard-check',title:'Repeat your starting measures',time:'End of week',days:'Once'}]}
       ];
       const sources={
         self:{label:'Self care',icon:'leaf',description:'Choose a constipation routine.',note:'Add one at a time so its effect is easier to understand.',items:[{icon:'sunrise',title:'Bathroom attempt 15–45 min after breakfast',time:'Morning',days:'5 days'},{icon:'footprints',title:'Use a footstool and relaxed posture',time:'During bathroom attempt',days:'5 days'},{icon:'door-open',title:'Respond to the urge without delaying',time:'When the urge appears',days:'As needed'}]},
@@ -34,7 +34,6 @@
         state.selectedWeek=index;
         const week=weeks[index];
         const first=week.items[0];
-        nodes.forEach((node,nodeIndex)=>node.setAttribute('aria-pressed',String(nodeIndex===index)));
         const actionMarkup=first?`<div class="gpm-sheet-action"><div class="gpm-sheet-action-label">First thing to do</div><p>${escapeText(first.title)}</p><div class="gpm-sheet-meta"><span><i data-lucide="clock-3" aria-hidden="true"></i>${escapeText(first.time)}</span><span><i data-lucide="calendar-check" aria-hidden="true"></i>${escapeText(first.days)}</span></div></div>`:`<div class="gpm-sheet-action"><div class="gpm-sheet-action-label">Nothing scheduled</div><p>Add what would help this week.</p></div>`;
         setSheet(`Week ${index+1} · ${week.milestone}`,week.title,`${actionMarkup}<p class="gpm-evidence"><i data-lucide="line-chart" aria-hidden="true"></i><span>${week.evidence}</span></p><div class="gpm-sheet-actions"><button class="gpm-main-button" type="button" data-manage>Manage this week${week.items.length?` · ${week.items.length}`:''}</button><button class="gpm-text-button" type="button" data-edit-plan>Edit whole Plan</button>${backButton('Back to Plan')}</div>`);
         body.querySelector('[data-manage]').addEventListener('click',showWeekEditor);
@@ -136,7 +135,7 @@
           closeSheet();
           startButton.disabled=true;
           startButton.innerHTML='Plan started <i data-lucide="check" aria-hidden="true"></i>';
-          startMarker.textContent='Started today';
+          if(startMarker) startMarker.textContent='Started today';
           refreshIcons();
         });
       };

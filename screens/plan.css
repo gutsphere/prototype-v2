@@ -31,7 +31,7 @@
     }
     #gutsphere-plan-roadmap .gpm-header {
       height:66px;
-      padding:8px 14px 10px;
+      padding:8px var(--gs-page-px) 10px;
       display:grid;
       grid-template-columns:52px 1fr 52px;
       align-items:center;
@@ -50,8 +50,9 @@
       place-items:center;
     }
     #gutsphere-plan-roadmap .gpm-icon-button i { width:20px;height:20px; }
-    #gutsphere-plan-roadmap .gpm-main { padding:8px 18px 24px; }
+    #gutsphere-plan-roadmap .gpm-main { padding:8px 0 24px; }
     #gutsphere-plan-roadmap .gpm-summary {
+      margin:0 var(--gs-page-px);
       padding:20px 20px 17px;
       border:1px solid var(--gpm-line);
       border-radius:27px 27px 18px 18px;
@@ -65,58 +66,261 @@
     #gutsphere-plan-roadmap .gpm-summary-meta span { display:inline-flex;align-items:center;gap:5px; }
     #gutsphere-plan-roadmap .gpm-summary-meta i { width:14px;height:14px;color:var(--gpm-green); }
     #gutsphere-plan-roadmap .gpm-summary-meta b { width:3px;height:3px;border-radius:50%;background:var(--gpm-muted);opacity:.5; }
-    #gutsphere-plan-roadmap .gpm-road-surface {
-      margin-top:8px;
-      padding:9px 8px 12px;
-      border:1px solid var(--gpm-line);
-      border-radius:18px 18px 27px 27px;
-      background:var(--gpm-surface);
+    #gutsphere-plan-roadmap .gpm-spine { margin-top:18px; }
+    #gutsphere-plan-roadmap .gpm-spine-head {
+      margin:0 var(--gs-page-px) 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
     }
-    #gutsphere-plan-roadmap .gpm-road-head { min-height:48px;padding:7px 10px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px; }
-    #gutsphere-plan-roadmap .gpm-road-title { margin:0;color:var(--gpm-ink);font-size:17px;line-height:1.2;font-weight:500; }
-    #gutsphere-plan-roadmap .gpm-road-hint { margin:3px 0 0;color:var(--gpm-muted);font-size:var(--gs-type-metadata-size);line-height:1.35; }
-    #gutsphere-plan-roadmap .gpm-start-marker { min-height:29px;padding:0 9px;border-radius:999px;background:var(--gpm-coral-soft);color:var(--gs-color-brand-text);display:inline-flex;align-items:center;font-size:var(--gs-type-metadata-size);font-weight:500;white-space:nowrap; }
-    #gutsphere-plan-roadmap .gpm-map { height:590px;position:relative;overflow:hidden; }
-    #gutsphere-plan-roadmap .gpm-road-svg { position:absolute;inset:0;width:100%;height:100%;pointer-events:none; }
-    #gutsphere-plan-roadmap .gpm-road-base { fill:none;stroke:var(--gpm-soft);stroke-width:17;stroke-linecap:round;stroke-linejoin:round; }
-    #gutsphere-plan-roadmap .gpm-road-center { fill:none;stroke:var(--gpm-surface);stroke-width:3;stroke-linecap:round;stroke-dasharray:1 12; }
-    #gutsphere-plan-roadmap .gpm-milestone-label { position:absolute;left:50%;transform:translateX(-50%);min-height:26px;padding:0 10px;border-radius:999px;background:var(--gpm-soft);color:var(--gpm-muted);display:flex;align-items:center;gap:6px;font-size:var(--gs-type-metadata-size);font-weight:500;white-space:nowrap;z-index:2; }
-    #gutsphere-plan-roadmap .gpm-milestone-label i { width:13px;height:13px;color:var(--gpm-green); }
-    #gutsphere-plan-roadmap .gpm-m1 { top:2px; }
-    #gutsphere-plan-roadmap .gpm-m2 { top:198px; }
-    #gutsphere-plan-roadmap .gpm-m3 { top:394px; }
-    #gutsphere-plan-roadmap .gpm-week-node { position:absolute;width:58px;height:58px;padding:0;border:6px solid var(--gpm-surface);border-radius:50%;background:var(--gpm-soft);color:var(--gpm-muted);display:grid;place-items:center;z-index:3;box-shadow:0 4px 12px rgba(23,24,22,.10);transition:transform 180ms ease,background 180ms ease,color 180ms ease; }
-    #gutsphere-plan-roadmap .gpm-week-node[aria-pressed="true"] { background:var(--gpm-coral);color:var(--gpm-surface);transform:scale(1.1); }
-    #gutsphere-plan-roadmap .gpm-week-node i { width:21px;height:21px; }
-    #gutsphere-plan-roadmap .gpm-week-node span { position:absolute;right:-5px;bottom:-7px;min-width:23px;height:23px;padding:0 5px;border:2px solid var(--gpm-surface);border-radius:999px;background:var(--gpm-ink);color:var(--gpm-surface);display:grid;place-items:center;font-size:var(--gs-type-metadata-size);font-weight:500; }
-    #gutsphere-plan-roadmap .gpm-left-node { left:calc(25% - 29px); }
-    #gutsphere-plan-roadmap .gpm-right-node { left:calc(75% - 29px); }
-    #gutsphere-plan-roadmap .gpm-w1 { top:45px; }
-    #gutsphere-plan-roadmap .gpm-w2 { top:121px; }
-    #gutsphere-plan-roadmap .gpm-w3 { top:241px; }
-    #gutsphere-plan-roadmap .gpm-w4 { top:317px; }
-    #gutsphere-plan-roadmap .gpm-w5 { top:437px; }
-    #gutsphere-plan-roadmap .gpm-w6 { top:513px; }
-    #gutsphere-plan-roadmap .gpm-week-copy { position:absolute;width:calc(50% - 42px);z-index:2; }
-    #gutsphere-plan-roadmap .gpm-week-copy.gpm-copy-right { left:calc(25% + 40px); }
-    #gutsphere-plan-roadmap .gpm-week-copy.gpm-copy-left { right:calc(25% + 40px);text-align:right; }
-    #gutsphere-plan-roadmap .gpm-week-copy b { display:block;color:var(--gs-color-brand-text);font-size:var(--gs-type-metadata-size);line-height:1.2;font-weight:500;text-transform:uppercase;letter-spacing:.45px; }
-    #gutsphere-plan-roadmap .gpm-week-copy strong { display:block;margin-top:4px;color:var(--gpm-ink);font-size:13px;line-height:1.24;font-weight:500; }
-    #gutsphere-plan-roadmap .gpm-c1 { top:51px; }
-    #gutsphere-plan-roadmap .gpm-c2 { top:127px; }
-    #gutsphere-plan-roadmap .gpm-c3 { top:247px; }
-    #gutsphere-plan-roadmap .gpm-c4 { top:323px; }
-    #gutsphere-plan-roadmap .gpm-c5 { top:443px; }
-    #gutsphere-plan-roadmap .gpm-c6 { top:519px; }
+    #gutsphere-plan-roadmap .gpm-spine-hint { margin:0;color:var(--gpm-muted);font-size:var(--gs-type-metadata-size);line-height:1.35; }
+    #gutsphere-plan-roadmap .gpm-start-marker {
+      min-height:29px;
+      padding:0 9px;
+      border-radius:999px;
+      background:var(--gpm-coral-soft);
+      color:var(--gs-color-brand-text);
+      display:inline-flex;
+      align-items:center;
+      font-size:var(--gs-type-metadata-size);
+      font-weight:500;
+      white-space:nowrap;
+    }
+    #gutsphere-plan-roadmap .gpm-unit { display:flex;flex-direction:column; }
+    #gutsphere-plan-roadmap .gpm-banner {
+      margin:0 var(--gs-page-px);
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:16px 16px 15px;
+      border-radius:var(--gs-radius-feature);
+    }
+    #gutsphere-plan-roadmap .gpm-banner-icon {
+      flex:0 0 18px;
+      width:18px;
+      height:18px;
+      margin-top:22px;
+      color:inherit;
+      display:grid;
+      place-items:center;
+    }
+    #gutsphere-plan-roadmap .gpm-banner-icon i { width:18px;height:18px; }
+    #gutsphere-plan-roadmap .gpm-banner-copy { min-width:0;flex:1; }
+    #gutsphere-plan-roadmap .gpm-banner-kicker {
+      margin:0 0 4px;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+    }
+    #gutsphere-plan-roadmap .gpm-banner-title {
+      margin:0;
+      font-size:var(--gs-type-card-size);
+      line-height:1.2;
+      letter-spacing:-.35px;
+      font-weight:700;
+    }
+    #gutsphere-plan-roadmap .gpm-banner-desc {
+      margin:6px 0 0;
+      font-size:13px;
+      line-height:1.4;
+      opacity:.9;
+    }
+    #gutsphere-plan-roadmap .gpm-banner.is-current {
+      background:var(--gpm-green);
+      color:var(--gpm-canvas);
+      box-shadow:0 3px 0 color-mix(in srgb, var(--gpm-green) 62%, var(--gpm-ink));
+    }
+    #gutsphere-plan-roadmap .gpm-banner.is-done {
+      background:var(--gpm-green);
+      color:var(--gpm-canvas);
+      box-shadow:0 3px 0 color-mix(in srgb, var(--gpm-green) 62%, var(--gpm-ink));
+    }
+    #gutsphere-plan-roadmap .gpm-banner.is-future {
+      background:var(--gs-color-sand-light);
+      color:var(--gpm-ink);
+      border:1px solid var(--gs-color-border);
+      box-shadow:none;
+    }
+    #gutsphere-plan-roadmap .gpm-banner.is-future .gpm-banner-icon,
+    #gutsphere-plan-roadmap .gpm-banner.is-future .gpm-banner-kicker { color:var(--gpm-muted); }
+    #gutsphere-plan-roadmap .gpm-banner.is-future .gpm-banner-title { color:var(--gpm-ink); }
+    #gutsphere-plan-roadmap .gpm-path {
+      position:relative;
+      width:100%;
+      height:196px;
+      margin:4px 0 36px;
+      overflow:visible;
+    }
+    #gutsphere-plan-roadmap .gpm-trail {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      overflow:visible;
+    }
+    #gutsphere-plan-roadmap .gpm-trail-base {
+      fill:none;
+      stroke:var(--gs-color-border-hover);
+      stroke-width:5;
+      stroke-linecap:round;
+      stroke-dasharray:2 11;
+    }
+    #gutsphere-plan-roadmap .gpm-trail-walk {
+      fill:none;
+      stroke:color-mix(in srgb, var(--gpm-green) 55%, transparent);
+      stroke-width:5;
+      stroke-linecap:round;
+      opacity:0;
+    }
+    #gutsphere-plan-roadmap .gpm-path.is-walked .gpm-trail-base { opacity:0; }
+    #gutsphere-plan-roadmap .gpm-path.is-walked .gpm-trail-walk { opacity:1; }
+    #gutsphere-plan-roadmap .gpm-wk {
+      position:absolute;
+      width:66px;
+      height:66px;
+      padding:0;
+      border:0;
+      background:transparent;
+      color:inherit;
+      transform:translate(-50%,-50%);
+      z-index:2;
+    }
+    #gutsphere-plan-roadmap .gpm-wk::after {
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:110px;
+      height:104px;
+      transform:translate(-50%,-38%);
+    }
+    #gutsphere-plan-roadmap .gpm-wk-start { left:32.16%;top:56px; }
+    #gutsphere-plan-roadmap .gpm-wk-end { left:67.84%;top:140px; }
+    #gutsphere-plan-roadmap .gpm-path-flip .gpm-wk-start { left:67.84%;top:56px; }
+    #gutsphere-plan-roadmap .gpm-path-flip .gpm-wk-end { left:32.16%;top:140px; }
+    #gutsphere-plan-roadmap .gpm-disc {
+      position:relative;
+      width:66px;
+      height:66px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-size:21px;
+      font-weight:700;
+      letter-spacing:-.4px;
+      line-height:1;
+    }
+    #gutsphere-plan-roadmap .gpm-disc i { width:26px;height:26px;stroke-width:2.4; }
+    #gutsphere-plan-roadmap .gpm-wk-label {
+      position:absolute;
+      top:70px;
+      left:50%;
+      transform:translateX(-50%);
+      white-space:nowrap;
+      font-size:12px;
+      font-weight:600;
+      line-height:1.2;
+    }
+    #gutsphere-plan-roadmap .gpm-wk.is-done .gpm-disc {
+      background:var(--gpm-green);
+      color:var(--gpm-canvas);
+      box-shadow:0 5px 0 color-mix(in srgb, var(--gpm-green) 62%, var(--gpm-ink));
+    }
+    #gutsphere-plan-roadmap .gpm-wk.is-done .gpm-wk-label { color:var(--gpm-green); }
+    #gutsphere-plan-roadmap .gpm-wk.is-now .gpm-disc {
+      background:var(--gpm-coral-soft);
+      color:var(--gs-color-brand-text);
+      box-shadow:0 5px 0 color-mix(in srgb, var(--gpm-coral) 42%, var(--gpm-coral-soft)), 0 0 0 6px var(--gs-color-brand-glow);
+    }
+    #gutsphere-plan-roadmap .gpm-wk.is-now .gpm-wk-label { color:var(--gs-color-brand-text); }
+    #gutsphere-plan-roadmap .gpm-wk.is-next .gpm-disc {
+      background:var(--gs-color-surface);
+      color:var(--gpm-ink);
+      border:2px solid var(--gs-color-border-hover);
+      box-shadow:0 5px 0 var(--gs-color-border);
+    }
+    #gutsphere-plan-roadmap .gpm-wk.is-next .gpm-wk-label { color:var(--gpm-muted); }
+    #gutsphere-plan-roadmap .gpm-wk.is-ahead .gpm-disc {
+      background:var(--gs-color-sand-light);
+      color:var(--gpm-muted);
+      border:2px dashed var(--gs-color-border-hover);
+      box-shadow:none;
+    }
+    #gutsphere-plan-roadmap .gpm-wk.is-ahead .gpm-wk-label { color:var(--gpm-muted); }
+    #gutsphere-plan-roadmap .gpm-gate {
+      position:absolute;
+      top:-2px;
+      right:-2px;
+      width:24px;
+      height:24px;
+      border:1.5px solid var(--gs-color-surface);
+      border-radius:50%;
+      background:var(--gs-color-info-soft);
+      color:var(--gs-color-info);
+      display:grid;
+      place-items:center;
+    }
+    #gutsphere-plan-roadmap .gpm-gate i { width:12px;height:12px;stroke-width:2; }
+    #gutsphere-plan-roadmap .gpm-here {
+      position:absolute;
+      left:50%;
+      bottom:calc(100% + 12px);
+      transform:translateX(-18%);
+      z-index:4;
+      padding:6px 10px;
+      border:1px solid color-mix(in srgb, var(--gpm-coral) 35%, var(--gpm-coral-soft));
+      border-radius:var(--gs-radius-full);
+      background:var(--gpm-coral-soft);
+      color:var(--gs-color-brand-text);
+      font-size:12px;
+      font-weight:600;
+      line-height:1;
+      white-space:nowrap;
+      pointer-events:none;
+    }
+    #gutsphere-plan-roadmap .gpm-here::after {
+      content:"";
+      position:absolute;
+      left:42%;
+      bottom:-5px;
+      width:10px;
+      height:10px;
+      background:var(--gpm-coral-soft);
+      border-right:1px solid color-mix(in srgb, var(--gpm-coral) 35%, var(--gpm-coral-soft));
+      border-bottom:1px solid color-mix(in srgb, var(--gpm-coral) 35%, var(--gpm-coral-soft));
+      transform:rotate(45deg);
+    }
+    #gutsphere-plan-roadmap .gpm-wk:focus-visible .gpm-disc {
+      outline:2px solid var(--gs-color-brand-text);
+      outline-offset:3px;
+    }
     #gutsphere-plan-roadmap .gpm-main-button { width:100%;min-height:52px;margin-top:12px;padding:0 18px;border:0;border-radius:17px;background:var(--gpm-ink);color:var(--gpm-canvas);font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px; }
     #gutsphere-plan-roadmap .gpm-main-button i { width:17px;height:17px; }
     #gutsphere-plan-roadmap .gpm-main-button:disabled { background:var(--gpm-green);color:var(--gpm-surface); }
-    #gutsphere-plan-roadmap .gpm-action-dock { position:sticky;bottom:10px;z-index:5;margin-top:10px;padding:8px;border:1px solid var(--gpm-line);border-radius:20px;background:rgba(255,255,255,.96);box-shadow:0 10px 28px rgba(23,24,22,.14);display:grid;grid-template-columns:.82fr 1.28fr;gap:8px; }
+    #gutsphere-plan-roadmap .gpm-action-dock { position:sticky;bottom:10px;z-index:5;margin:10px var(--gs-page-px) 0;padding:8px;border:1px solid var(--gpm-line);border-radius:20px;background:rgba(255,255,255,.96);box-shadow:0 10px 28px rgba(23,24,22,.14);display:grid;grid-template-columns:.82fr 1.28fr;gap:8px; }
     #gutsphere-plan-roadmap .gpm-action-dock .gpm-main-button { width:auto;min-width:0;margin:0;padding-inline:12px; }
     #gutsphere-plan-roadmap .gpm-secondary-button { min-width:0;min-height:52px;padding:0 10px;border:0;border-radius:15px;background:var(--gpm-soft);color:var(--gpm-ink);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px; }
     #gutsphere-plan-roadmap .gpm-secondary-button i { width:16px;height:16px;color:var(--gpm-green); }
-    #gutsphere-plan-roadmap .gpm-approval-note { margin:9px 0 0;text-align:center;color:var(--gpm-muted);font-size:var(--gs-type-metadata-size);line-height:1.35; }
-    #gutsphere-plan-roadmap .gpm-overlay { position:absolute;inset:0;z-index:10;background:rgba(16,17,15,.33);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity 200ms ease; }
+    #gutsphere-plan-roadmap .gpm-approval-note { margin:9px var(--gs-page-px) 0;text-align:center;color:var(--gpm-muted);font-size:var(--gs-type-metadata-size);line-height:1.35; }
+    #gutsphere-plan-roadmap .gpm-overlay {
+      position:fixed;
+      top:0;
+      bottom:0;
+      left:50%;
+      width:100%;
+      max-width:var(--gs-max-width);
+      z-index:10;
+      background:rgba(16,17,15,.33);
+      display:flex;
+      align-items:flex-end;
+      opacity:0;
+      pointer-events:none;
+      transform:translateX(-50%);
+      transition:opacity 200ms ease;
+    }
     #gutsphere-plan-roadmap .gpm-overlay.is-open { opacity:1;pointer-events:auto; }
     #gutsphere-plan-roadmap .gpm-sheet { width:100%;padding:10px 20px 25px;border-radius:28px 28px 0 0;background:var(--gpm-surface);transform:translateY(25px);transition:transform 240ms cubic-bezier(.22,.8,.28,1); }
     #gutsphere-plan-roadmap .gpm-overlay.is-open .gpm-sheet { transform:translateY(0); }
@@ -173,12 +377,12 @@
     #gutsphere-plan-roadmap .gpm-textarea { width:100%;min-height:96px;margin-top:15px;padding:13px;border:1px solid var(--gpm-line);border-radius:15px;background:var(--gpm-canvas);color:var(--gpm-ink);font-size:16px;line-height:1.4;resize:none; }
     #gutsphere-plan-roadmap .gpm-confirm-copy { margin:13px 0 0;color:var(--gpm-muted);font-size:14px;line-height:1.45; }
     @media (prefers-reduced-motion:reduce) {
-      #gutsphere-plan-roadmap .gpm-week-node,#gutsphere-plan-roadmap .gpm-overlay,#gutsphere-plan-roadmap .gpm-sheet { transition:none; }
+      #gutsphere-plan-roadmap .gpm-overlay,#gutsphere-plan-roadmap .gpm-sheet { transition:none; }
     }
     @media (max-width:360px) {
       #gutsphere-plan-roadmap .gpm-phone { border-radius:0; }
-      #gutsphere-plan-roadmap .gpm-main { padding-inline:14px; }
       #gutsphere-plan-roadmap .gpm-summary { padding-inline:17px; }
       #gutsphere-plan-roadmap .gpm-objective { font-size:21px; }
-      #gutsphere-plan-roadmap .gpm-week-copy strong { font-size:12px; }
+      #gutsphere-plan-roadmap .gpm-banner { padding-inline:14px; }
+      #gutsphere-plan-roadmap .gpm-wk-label { font-size:11px; }
     }
