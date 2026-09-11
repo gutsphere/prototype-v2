@@ -1,0 +1,207 @@
+:root {
+  color-scheme: light;
+  --gs-type-metadata-size: 12px;
+
+  --gs-color-canvas: #f6f3ed;
+  --gs-color-surface: #ffffff;
+  --gs-color-surface-soft: #eceae5;
+  --gs-color-text: #11120f;
+  --gs-color-text-secondary: #343630;
+  --gs-color-text-muted: #555950;
+  --gs-color-text-placeholder: #777b73;
+  --gs-color-border: #dedfd9;
+  --gs-color-brand-fill: #ef5350;
+  --gs-color-brand-text: #b9363b;
+  --gs-color-brand-soft: #fde9e7;
+  --gs-color-support: #2f6b55;
+  --gs-color-support-soft: #e6f0ea;
+  --gs-color-info: #3f627a;
+  --gs-color-info-soft: #e8f0f5;
+  --gs-color-care: #8d642f;
+  --gs-color-care-soft: #f5eddf;
+  --gs-color-journey: #695886;
+  --gs-color-journey-soft: #eeeaf5;
+  --gs-color-critical: #a43e36;
+  --gs-color-critical-soft: #faebe9;
+  --gs-color-overlay: rgb(17 18 15 / 36%);
+
+  --gs-font-ui: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --gs-type-display-size: 32px;
+  --gs-type-display-line: 38px;
+  --gs-type-screen-size: 28px;
+  --gs-type-screen-line: 34px;
+  --gs-type-hero-size: 24px;
+  --gs-type-hero-line: 29px;
+  --gs-type-section-size: 20px;
+  --gs-type-section-line: 26px;
+  --gs-type-card-size: 18px;
+  --gs-type-card-line: 24px;
+  --gs-type-body-size: 17px;
+  --gs-type-body-line: 24px;
+  --gs-type-body-small-size: 15px;
+  --gs-type-body-small-line: 21px;
+  --gs-type-label-size: 13px;
+  --gs-type-label-line: 18px;
+  --gs-type-metadata-line: 16px;
+
+  --gs-space-1: 4px;
+  --gs-space-2: 8px;
+  --gs-space-3: 12px;
+  --gs-space-4: 16px;
+  --gs-space-5: 20px;
+  --gs-space-6: 24px;
+  --gs-space-8: 32px;
+  --gs-space-10: 40px;
+
+  --gs-radius-small: 10px;
+  --gs-radius-control: 14px;
+  --gs-radius-card: 20px;
+  --gs-radius-feature: 26px;
+  --gs-radius-sheet: 28px;
+  --gs-radius-full: 999px;
+
+  --gs-touch-minimum: 44px;
+  --gs-touch-default: 48px;
+  --gs-nav-height: 70px;
+  --gs-max-width: 430px;
+  --gs-page-px: 16px;
+  --gs-icon-small: 16px;
+  --gs-icon-medium: 20px;
+  --gs-icon-large: 24px;
+  --gs-nav-icon: 20px;
+  --gs-icon-stroke: 1.5;
+  --gs-shadow-color: rgb(17 18 15 / 5.5%);
+  --gs-shadow-card: 0 5px 16px var(--gs-shadow-color);
+  --gs-shadow-sheet: 0 -18px 48px rgb(17 18 15 / 12%);
+  --gs-z-chrome: 40;
+  --gs-z-sheet: 60;
+}
+
+#gutsphere-plan-generation {
+  --gpg-canvas: var(--gs-color-canvas);
+  --gpg-surface: var(--gs-color-surface);
+  --gpg-soft: var(--gs-color-surface-soft);
+  --gpg-ink: var(--gs-color-text);
+  --gpg-muted: var(--gs-color-text-muted);
+  --gpg-line: var(--gs-color-border);
+  --gpg-coral: var(--gs-color-brand-fill);
+  --gpg-coral-soft: var(--gs-color-brand-soft);
+  --gpg-green: var(--gs-color-support);
+}
+
+#gutsphere-plan-roadmap {
+  --gpm-canvas: var(--gs-color-canvas);
+  --gpm-surface: var(--gs-color-surface);
+  --gpm-soft: var(--gs-color-surface-soft);
+  --gpm-ink: var(--gs-color-text);
+  --gpm-muted: var(--gs-color-text-muted);
+  --gpm-line: var(--gs-color-border);
+  --gpm-coral: var(--gs-color-brand-fill);
+  --gpm-coral-soft: var(--gs-color-brand-soft);
+  --gpm-green: var(--gs-color-support);
+  --gpm-green-soft: var(--gs-color-support-soft);
+  --gpm-danger: var(--gs-color-critical);
+  --gpm-danger-soft: var(--gs-color-critical-soft);
+}
+
+#gutsphere-today-carousel,
+.gsp-transient-layer {
+  --gtc-bg: var(--gs-color-canvas);
+  --gtc-panel: var(--gs-color-surface);
+  --gtc-ink: var(--gs-color-text);
+  --gtc-muted: var(--gs-color-text-muted);
+  --gtc-line: var(--gs-color-border);
+  --gtc-soft: var(--gs-color-surface-soft);
+  --gtc-coral: var(--gs-color-brand-fill);
+  --gtc-blush: var(--gs-color-brand-soft);
+  --gtc-green: var(--gs-color-support);
+  --gtc-green-soft: var(--gs-color-support-soft);
+  --gtc-blue: var(--gs-color-info);
+  --gtc-blue-soft: var(--gs-color-info-soft);
+}
+
+#gutsphere-track-screen,
+.gts-sheet-layer {
+  --gts-bg: var(--gs-color-canvas);
+  --gts-panel: var(--gs-color-surface);
+  --gts-ink: var(--gs-color-text);
+  --gts-muted: var(--gs-color-text-muted);
+  --gts-line: var(--gs-color-border);
+  --gts-soft: var(--gs-color-surface-soft);
+  --gts-coral: var(--gs-color-brand-fill);
+  --gts-blush: var(--gs-color-brand-soft);
+  --gts-green: var(--gs-color-support);
+  --gts-green-soft: var(--gs-color-support-soft);
+  --gts-blue: var(--gs-color-info);
+  --gts-blue-soft: var(--gs-color-info-soft);
+  --gts-gold: var(--gs-color-care);
+  --gts-gold-soft: var(--gs-color-care-soft);
+  --gts-card-radius: var(--gs-radius-feature);
+}
+
+#gutsphere-journey-synthesis-interactions {
+  --gjx-bg: var(--gs-color-canvas);
+  --gjx-panel: var(--gs-color-surface);
+  --gjx-ink: var(--gs-color-text);
+  --gjx-muted: var(--gs-color-text-muted);
+  --gjx-line: var(--gs-color-border);
+  --gjx-soft: var(--gs-color-surface-soft);
+  --gjx-coral: var(--gs-color-brand-fill);
+  --gjx-blush: var(--gs-color-brand-soft);
+  --gjx-green: var(--gs-color-support);
+  --gjx-green-soft: var(--gs-color-support-soft);
+  --gjx-blue: var(--gs-color-info);
+  --gjx-blue-soft: var(--gs-color-info-soft);
+  --gjx-gold: var(--gs-color-care);
+  --gjx-gold-soft: var(--gs-color-care-soft);
+  --gjx-purple: var(--gs-color-journey);
+  --gjx-purple-soft: var(--gs-color-journey-soft);
+}
+
+#gutsphere-care-screen {
+  --gcs-bg: var(--gs-color-canvas);
+  --gcs-panel: var(--gs-color-surface);
+  --gcs-ink: var(--gs-color-text);
+  --gcs-muted: var(--gs-color-text-muted);
+  --gcs-line: var(--gs-color-border);
+  --gcs-soft: var(--gs-color-surface-soft);
+  --gcs-coral: var(--gs-color-brand-fill);
+  --gcs-blush: var(--gs-color-brand-soft);
+  --gcs-green: var(--gs-color-support);
+  --gcs-green-soft: var(--gs-color-support-soft);
+  --gcs-blue: var(--gs-color-info);
+  --gcs-blue-soft: var(--gs-color-info-soft);
+  --gcs-gold: var(--gs-color-care);
+  --gcs-gold-soft: var(--gs-color-care-soft);
+  --gcs-radius: var(--gs-radius-feature);
+}
+
+#gcf-root {
+  color-scheme: light;
+  --gcf-bg: var(--gs-color-canvas);
+  --gcf-surface: var(--gs-color-surface);
+  --gcf-ink: var(--gs-color-text);
+  --gcf-muted: var(--gs-color-text-muted);
+  --gcf-faint: var(--gs-color-text-placeholder);
+  --gcf-line: var(--gs-color-border);
+  --gcf-coral: var(--gs-color-brand-fill);
+  --gcf-coral-soft: var(--gs-color-brand-soft);
+  --gcf-sage: var(--gs-color-support-soft);
+  --gcf-sage-ink: var(--gs-color-support);
+  --gcf-blue: var(--gs-color-info-soft);
+  --gcf-blue-ink: var(--gs-color-info);
+  --gcf-shadow: var(--gs-shadow-color);
+  --gcf-screen: var(--gs-color-overlay);
+  --gcf-radius: var(--gs-radius-feature);
+  --gcf-gap: var(--gs-space-5);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--gs-color-canvas);
+  color: var(--gs-color-text);
+  font-family: var(--gs-font-ui);
+}

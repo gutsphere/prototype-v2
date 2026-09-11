@@ -1,0 +1,12 @@
+{
+  "name": "gutsphere-demo-v2",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Static Gutsphere Demo v2. v0.2 UI, modular shell, one constipation persona.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "python3 validate_prototype.py"
+  }
+}

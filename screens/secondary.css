@@ -1,0 +1,127 @@
+#app .gsp-secondary {
+  min-height: 100dvh;
+  background: var(--gs-color-canvas);
+  color: var(--gs-color-text);
+  font-family: var(--gs-font-ui);
+}
+
+#app .gsp-card {
+  padding: 16px;
+  border: 1px solid var(--gs-color-border);
+  border-radius: var(--gs-radius-card);
+  background: var(--gs-color-surface);
+  box-shadow: var(--gs-shadow-card);
+}
+
+#app .gsp-card + .gsp-card,
+#app .gsp-card + .gsp-row {
+  margin-top: 12px;
+}
+
+#app .gsp-avatar-lg {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--gs-radius-full);
+  background: var(--gs-color-brand-soft);
+  color: var(--gs-color-brand-text);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+
+#app .gsp-profile-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+#app .gsp-profile-head h2 {
+  margin: 0;
+  font-size: var(--gs-type-card-size);
+  line-height: var(--gs-type-card-line);
+}
+
+#app .gsp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+#app .gsp-tag {
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: var(--gs-radius-full);
+  background: var(--gs-color-surface-soft);
+  color: var(--gs-color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--gs-type-metadata-size);
+  font-weight: 500;
+}
+
+#app .gsp-check {
+  min-height: 48px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+#app .gsp-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid var(--gs-color-border);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+#app .gsp-box.is-on {
+  background: var(--gs-color-support);
+  border-color: var(--gs-color-support);
+  color: #fff;
+}
+
+#app .gsp-pairs {
+  display: grid;
+  gap: 8px;
+}
+
+#app .gsp-pair {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: var(--gs-type-body-small-size);
+}
+
+#app .gsp-pair span {
+  color: var(--gs-color-text-muted);
+}
+
+#app .gsp-confidence {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--gs-color-surface-soft);
+  overflow: hidden;
+  margin: 10px 0 6px;
+}
+
+#app .gsp-confidence > i {
+  display: block;
+  height: 100%;
+  background: var(--gs-color-support);
+}
+
+#app .gsp-question {
+  padding: 12px 14px;
+  border-radius: var(--gs-radius-control);
+  background: var(--gs-color-surface-soft);
+  margin: 0 0 8px;
+  font-size: var(--gs-type-body-small-size);
+}

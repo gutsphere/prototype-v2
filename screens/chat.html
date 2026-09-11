@@ -1,0 +1,26 @@
+<div id="gcf-root" aria-label="Interactive complete Gutsphere Chat flow">
+  <section class="gcf-phone" aria-label="Gutsphere mobile app">
+    <header class="gcf-topbar">
+      <button class="gcf-profile" id="gcf-leading" type="button" aria-label="Open profile" data-gsp-open="profile">BM</button>
+      <div class="gcf-title-wrap"><h1 class="gcf-title" id="gcf-title">Chat</h1><div class="gcf-subtitle" id="gcf-subtitle">Your GI Copilot</div></div>
+      <button class="gcf-round" id="gcf-more" type="button" aria-label="Notifications" data-gsp-open="notifications"><i data-lucide="bell" aria-hidden="true"></i></button>
+    </header>
+
+    <div class="gcf-view" id="gcf-view"></div>
+
+    <div class="gcf-composer-wrap" id="gcf-composer-wrap">
+      <div class="gcf-composer"><button class="gcf-round" id="gcf-attach" type="button" aria-label="Attach from your records"><i data-lucide="plus" aria-hidden="true"></i></button><textarea id="gcf-input" rows="1" aria-label="Ask GI Copilot" placeholder="Ask about your digestive care"></textarea><button class="gcf-send" id="gcf-send" type="button" aria-label="Send message" disabled><i data-lucide="arrow-up" aria-hidden="true"></i></button></div>
+    </div>
+
+    <nav class="gcf-bottom-nav" aria-label="Main navigation">
+      <button class="gcf-nav" type="button" data-gsp-tab="today"><i data-lucide="sun" aria-hidden="true"></i><span>Today</span></button>
+      <button class="gcf-nav" type="button" data-gsp-tab="track"><i data-lucide="activity" aria-hidden="true"></i><span>Track</span></button>
+      <button class="gcf-nav" type="button" data-gsp-tab="journey"><i data-lucide="route" aria-hidden="true"></i><span>Journey</span></button>
+      <button class="gcf-nav" type="button" data-gsp-tab="care"><i data-lucide="heart-pulse" aria-hidden="true"></i><span>Care</span></button>
+      <button class="gcf-nav is-active" type="button" aria-current="page"><i data-lucide="message-circle" aria-hidden="true"></i><span>Chat</span></button>
+    </nav>
+
+    <div class="gcf-overlay" id="gcf-overlay" hidden><section class="gcf-sheet" id="gcf-sheet" role="dialog" aria-modal="true" aria-labelledby="gcf-sheet-title"></section></div>
+    <div class="gcf-toast" id="gcf-toast" role="status" hidden><i data-lucide="check" aria-hidden="true"></i><span id="gcf-toast-copy"></span></div>
+  </section>
+</div>

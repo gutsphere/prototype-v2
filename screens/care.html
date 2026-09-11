@@ -1,0 +1,106 @@
+<div id="gutsphere-care-screen">
+  
+
+  <section class="gcs-phone" aria-label="Interactive Gutsphere Care screen">
+    <header class="gcs-header">
+      <button class="gcs-avatar" type="button" aria-label="Open profile" data-gsp-open="profile" data-home-left>BM</button>
+      <button class="gcs-back" type="button" aria-label="Go back" data-back hidden><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+      <div class="gcs-heading"><h1 data-header-title>Care</h1><p data-header-subtitle>Support for where you are now</p></div>
+      <button class="gcs-header-icon" type="button" aria-label="Notifications" data-gsp-open="notifications" data-gsp-open="notifications"><i data-lucide="bell" aria-hidden="true"></i></button>
+    </header>
+
+    <main class="gcs-main" data-main>
+      <section class="gcs-view" data-view="home">
+        <div class="gcs-immediate-head"><div><h2>Immediate support</h2><p>Swipe through your active and saved care.</p></div><span class="gcs-count" data-support-count>1 of 4</span></div>
+        <div class="gcs-peek-carousel" data-support-carousel data-support-slide data-support-frame></div>
+        <div class="gcs-carousel-footer" aria-label="Immediate support cards">
+          <span class="gcs-dots" data-support-dots></span>
+          <span class="gcs-swipe-cue">Swipe to explore<i data-lucide="move-horizontal" aria-hidden="true"></i></span>
+        </div>
+
+        <div class="gcs-section-label">Ways Care can help</div>
+        <div class="gcs-entry-stack">
+          <button class="gcs-entry-card" type="button" data-view-target="selfcare"><span class="gcs-entry-icon"><i data-lucide="sprout" aria-hidden="true"></i></span><span class="gcs-entry-copy"><strong>Self-care</strong><p>Matched routines and the full catalogue</p><span data-selfcare-status>1 for you · 1 ready to review</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <button class="gcs-entry-card" type="button" data-view-target="visit"><span class="gcs-entry-icon"><i data-lucide="calendar-check" aria-hidden="true"></i></span><span class="gcs-entry-copy"><strong>Visits, tests &amp; procedures</strong><p>Prepare, understand, and keep results</p><span data-visit-status>1 visit · 2 questions left</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <button class="gcs-entry-card" type="button" data-view-target="careplan"><span class="gcs-entry-icon"><i data-lucide="clipboard-check" aria-hidden="true"></i></span><span class="gcs-entry-copy"><strong>Support your care plan</strong><p>Medications, treatments, and response</p><span data-careplan-status>1 medication · 1 treatment</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </section>
+
+      <section class="gcs-view" data-view="selfcare" hidden>
+        <div class="gcs-page-intro"><h2>Start with what fits you</h2><p>Matched support comes first. The rest stays available when you want to browse.</p></div>
+        <div class="gcs-section-label is-first">Matched for you</div>
+        <article class="gcs-focus-card">
+          <div class="gcs-focus-meta"><span class="gcs-chip" data-selfcare-chip><i data-lucide="target" aria-hidden="true"></i>Matched to your Plan</span><span class="gcs-time"><i data-lucide="clock-3" aria-hidden="true"></i><span data-selfcare-trial>7-day trial</span></span></div>
+          <h3 data-selfcare-title>Try a morning bowel window</h3>
+          <p class="gcs-focus-lead" data-selfcare-lead>On 5 of your last 7 recorded days, an urge appeared after breakfast. Your goal is to strain less.</p>
+          <div class="gcs-callout"><span class="gcs-callout-label">Why this may fit</span><strong data-selfcare-fit>Breakfast is already a repeated cue in your entries.</strong></div>
+          <div class="gcs-mini-road" aria-label="Three parts of the proposed routine"><span class="gcs-road-step"><span class="gcs-road-icon"><i data-lucide="circle-play" aria-hidden="true"></i></span><b data-selfcare-step="0">Finish breakfast</b></span><span class="gcs-road-step"><span class="gcs-road-icon"><i data-lucide="timer" aria-hidden="true"></i></span><b data-selfcare-step="1">Up to 10 minutes</b></span><span class="gcs-road-step"><span class="gcs-road-icon"><i data-lucide="activity" aria-hidden="true"></i></span><b data-selfcare-step="2">Avoid forcing</b></span></div>
+          <div class="gcs-card-actions"><button class="gcs-primary" type="button" data-open-flow="selfcare-review"><span data-selfcare-action>Review and add to Plan</span><i data-lucide="arrow-right" aria-hidden="true"></i></button><button class="gcs-text-action" type="button" data-open-flow="selfcare-options" data-selfcare-secondary>Not for me · See another option</button></div>
+        </article>
+        <p class="gcs-boundary">Choosing happens here. Your six-week Plan owns the routine after you add it.</p>
+        <section class="gcs-catalog" aria-label="Browse self-care catalogue">
+          <div class="gcs-catalog-head"><div><h3>Browse self-care</h3><p>Swipe through the wider catalogue.</p></div><span class="gcs-count" data-self-catalog-count>1 of 5</span></div>
+          <div class="gcs-peek-carousel" data-self-catalog-card></div>
+          <div class="gcs-carousel-footer">
+            <span class="gcs-dots" data-self-catalog-dots></span>
+            <span class="gcs-swipe-cue">Swipe to explore<i data-lucide="move-horizontal" aria-hidden="true"></i></span>
+          </div>
+        </section>
+      </section>
+
+      <section class="gcs-view" data-view="visit" hidden>
+        <div class="gcs-page-intro"><h2>Prepare without starting over</h2><p>Your recorded care comes first. You can also understand or prepare for supported care moments.</p></div>
+        <div class="gcs-section-label is-first">Matched to your upcoming care</div>
+        <article class="gcs-focus-card">
+          <div class="gcs-focus-meta"><span class="gcs-chip"><i data-lucide="calendar-check" aria-hidden="true"></i>Visit preparation</span><span class="gcs-time"><i data-lucide="clock-3" aria-hidden="true"></i>September 8</span></div>
+          <h3>Your GI visit is coming up</h3>
+          <p class="gcs-focus-lead">10:30 AM · Dr. Rao</p>
+          <div class="gcs-callout"><span class="gcs-callout-label">What you want answered</span><strong>Why does straining continue even when stool is soft?</strong></div>
+          <div class="gcs-path" aria-label="Visit preparation progress">
+            <div class="gcs-path-row is-done"><span class="gcs-path-node"><i data-lucide="check" aria-hidden="true"></i></span><span class="gcs-path-copy"><b>Context gathered</b><span>Symptoms, care tried, and test records</span></span></div>
+            <div class="gcs-path-row is-current" data-question-path><span class="gcs-path-node"><i data-lucide="message-square" aria-hidden="true"></i></span><span class="gcs-path-copy"><b data-question-path-title>Review 2 questions</b><span data-question-path-copy>Choose what you want to raise</span></span></div>
+            <div class="gcs-path-row" data-brief-path><span class="gcs-path-node"><i data-lucide="file-text" aria-hidden="true"></i></span><span class="gcs-path-copy"><b data-brief-path-title>Review your brief</b><span data-brief-path-copy>Nothing is shared until you choose</span></span></div>
+          </div>
+          <div class="gcs-card-actions"><button class="gcs-primary" type="button" data-open-flow="visit-prep"><span data-visit-action>Continue preparation</span><i data-lucide="arrow-right" aria-hidden="true"></i></button><button class="gcs-text-action" type="button" data-open-flow="add-moment"><i data-lucide="plus" aria-hidden="true"></i>Add a care moment</button></div>
+        </article>
+        <p class="gcs-boundary"><button class="gcs-text-action" type="button" data-gsp-open="journey">Completed visits and results live in Journey<i data-lucide="chevron-right" aria-hidden="true"></i></button></p>
+        <section class="gcs-catalog" aria-label="Browse visits, tests, and procedures">
+          <div class="gcs-catalog-head"><div><h3>Browse clinical support</h3><p>Learn, prepare, or keep a result.</p></div><span class="gcs-count" data-clinical-catalog-count aria-live="polite">1 visit</span></div>
+          <div class="gcs-catalog-tabs" role="tablist" aria-label="Clinical support type"><button id="gcs-clinical-tab-visit" type="button" data-clinical-tab="visit" role="tab" aria-controls="gcs-clinical-catalog-panel" aria-selected="true">Visit prep</button><button id="gcs-clinical-tab-test" type="button" data-clinical-tab="test" role="tab" aria-controls="gcs-clinical-catalog-panel" aria-selected="false">Tests</button><button id="gcs-clinical-tab-procedure" type="button" data-clinical-tab="procedure" role="tab" aria-controls="gcs-clinical-catalog-panel" aria-selected="false">Procedures</button></div>
+          <div id="gcs-clinical-catalog-panel" role="tabpanel" aria-labelledby="gcs-clinical-tab-visit" data-clinical-catalog-card><article class="gcs-catalog-card"><div class="gcs-catalog-kicker"><span>Visit preparation</span><i data-lucide="messages-square" aria-hidden="true"></i></div><h4>Prepare for a GI appointment</h4><p>Gather symptoms, treatments, results, and the questions you want to raise.</p><div class="gcs-catalog-actions"><button class="gcs-for-me" type="button" data-open-flow="add-moment"><i data-lucide="calendar-plus" aria-hidden="true"></i>Add a visit</button><button class="gcs-text-action" type="button" data-open-flow="visit-prep">Open current prep</button></div></article></div>
+        </section>
+      </section>
+
+      <section class="gcs-view" data-view="careplan" hidden>
+        <div class="gcs-page-intro"><h2>Carry your care plan between visits</h2><p>Keep clinician-directed medications and treatments easier to follow and review.</p></div>
+        <div class="gcs-immediate-head"><div><h2>Due from your care plan</h2><p>Swipe through medications and treatment actions.</p></div><span class="gcs-count" data-care-card-count>1 of 2</span></div>
+        <div class="gcs-peek-carousel" data-careplan-card></div>
+        <div class="gcs-carousel-footer" aria-label="Care plan actions">
+          <span class="gcs-dots" data-care-card-dots></span>
+          <span class="gcs-swipe-cue">Swipe to explore<i data-lucide="move-horizontal" aria-hidden="true"></i></span>
+        </div>
+        <p class="gcs-boundary">Gutsphere supports the plan you recorded. It does not diagnose, prescribe, or change treatment.</p>
+        <section class="gcs-library" aria-label="Recorded care">
+          <div class="gcs-library-head"><h3>Your recorded care</h3><button type="button" data-open-flow="add-care-item"><i data-lucide="plus" aria-hidden="true"></i>Add care</button></div>
+          <button class="gcs-library-row" type="button" data-care-library="medication"><span class="gcs-library-icon"><i data-lucide="pill" aria-hidden="true"></i></span><span class="gcs-library-copy"><strong>Medications</strong><span>1 active · follow-through due today</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <button class="gcs-library-row" type="button" data-care-library="treatment"><span class="gcs-library-icon"><i data-lucide="person-standing" aria-hidden="true"></i></span><span class="gcs-library-copy"><strong>Treatment-plan actions</strong><span>1 active · home practice this evening</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <button class="gcs-library-row" type="button" data-open-flow="care-response"><span class="gcs-library-icon"><i data-lucide="activity" aria-hidden="true"></i></span><span class="gcs-library-copy"><strong>Response review</strong><span>14-day review ready</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <button class="gcs-library-row" type="button" data-open-flow="care-barriers"><span class="gcs-library-icon"><i data-lucide="message-square-more" aria-hidden="true"></i></span><span class="gcs-library-copy"><strong>Questions and barriers</strong><span>Carry what got in the way to your next visit</span></span><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+        </section>
+      </section>
+
+      <section class="gcs-view gcs-flow" data-view="flow" data-flow-content hidden></section>
+    </main>
+
+    <nav class="gcs-nav" aria-label="Main navigation">
+      <button type="button" data-destination="Today"><i data-lucide="sun" aria-hidden="true"></i><span>Today</span></button>
+      <button type="button" data-destination="Track"><i data-lucide="activity" aria-hidden="true"></i><span>Track</span></button>
+      <button type="button" data-destination="Journey"><i data-lucide="route" aria-hidden="true"></i><span>Journey</span></button>
+      <button type="button" aria-current="page"><i data-lucide="heart-pulse" aria-hidden="true"></i><span>Care</span></button>
+      <button type="button" data-destination="Chat"><i data-lucide="message-circle" aria-hidden="true"></i><span>Chat</span></button>
+    </nav>
+    <div class="gcs-toast" role="status" aria-live="polite" data-toast-box></div>
+  </section>
+
+  
+</div>

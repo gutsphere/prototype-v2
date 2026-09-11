@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gutsphere Demo v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./shared/tokens.css">
+  <link rel="stylesheet" href="./shared/chrome.css">
+  <link rel="stylesheet" href="./screens/plan-generation.css">
+  <link rel="stylesheet" href="./screens/plan.css">
+  <link rel="stylesheet" href="./screens/today.css">
+  <link rel="stylesheet" href="./screens/track.css">
+  <link rel="stylesheet" href="./screens/journey.css">
+  <link rel="stylesheet" href="./screens/care.css">
+  <link rel="stylesheet" href="./screens/chat.css">
+  <link rel="stylesheet" href="./screens/secondary.css">
+</head>
+<body>
+  <div id="app"></div>
+  <p class="gsp-sr-only" id="gsp-route-status" aria-live="polite">Plan generation</p>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module">
+    import { boot } from './shared/shell.js';
+    import data from './conditions/constipation.js';
+    boot(data);
+  </script>
+</body>
+</html>
