@@ -4,6 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gutsphere Demo v2</title>
+  <script>
+    (function () {
+      var search = new URLSearchParams(location.search);
+      var hash = location.hash;
+      var hashQuery = hash.indexOf("?") >= 0
+        ? new URLSearchParams(hash.slice(hash.indexOf("?") + 1))
+        : null;
+      var framed = false;
+      try { framed = window.self !== window.top; } catch (e) { framed = true; }
+      if (search.get("embed") === "1" || (hashQuery && hashQuery.get("embed") === "1") || framed) {
+        document.documentElement.dataset.embed = "1";
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">

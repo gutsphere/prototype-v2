@@ -33,6 +33,102 @@ body {
   overflow-x: hidden;
 }
 
+html[data-embed="1"],
+html[data-embed="1"] body,
+html[data-embed="1"] #app {
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+html[data-embed="1"] #app {
+  display: flex;
+  flex-direction: column;
+}
+
+html[data-embed="1"] .gsp-stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html[data-embed="1"] .gsp-stage::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+html[data-embed="1"] .gsp-route,
+html[data-embed="1"] #app[data-chrome="app"] .gsp-stage,
+html[data-embed="1"] .gsp-placeholder,
+html[data-embed="1"] .gsp-secondary {
+  min-height: 0;
+}
+
+html[data-embed="1"] #app[data-route="chat"][data-chrome="app"] .gsp-stage {
+  height: auto;
+  overflow: hidden;
+}
+
+html[data-embed="1"] #app[data-chrome="none"] .gsp-stage {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+html[data-embed="1"] #app[data-chrome="none"] .gsp-route:not([hidden]) {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+html[data-embed="1"] #gutsphere-plan-roadmap,
+html[data-embed="1"] #gutsphere-plan-generation {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-block: 0;
+}
+
+html[data-embed="1"] #gutsphere-plan-roadmap .gpm-phone,
+html[data-embed="1"] #gutsphere-plan-generation .gpg-phone {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+html[data-embed="1"] #gutsphere-plan-roadmap .gpm-main,
+html[data-embed="1"] #gutsphere-plan-generation .gpg-main {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html[data-embed="1"] #gutsphere-plan-roadmap .gpm-main::-webkit-scrollbar,
+html[data-embed="1"] #gutsphere-plan-generation .gpg-main::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 @media (min-width: 431px) {
   #app {
     border-left: 1px solid var(--gs-color-border);

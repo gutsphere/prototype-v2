@@ -460,7 +460,24 @@ function onClick(event) {
   }
 }
 
+function applyEmbedMode() {
+  const search = new URLSearchParams(location.search);
+  const hash = location.hash;
+  const hashQuery =
+    hash.indexOf("?") >= 0 ? new URLSearchParams(hash.slice(hash.indexOf("?") + 1)) : null;
+  let framed = false;
+  try {
+    framed = window.self !== window.top;
+  } catch {
+    framed = true;
+  }
+  if (search.get("embed") === "1" || (hashQuery && hashQuery.get("embed") === "1") || framed) {
+    document.documentElement.dataset.embed = "1";
+  }
+}
+
 export function boot(data) {
+  applyEmbedMode();
   state.data = data;
   app = document.getElementById("app");
   app.innerHTML = chromeMarkup();
