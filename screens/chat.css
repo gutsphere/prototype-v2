@@ -450,7 +450,20 @@
   #gcf-root .gcf-signal-copy { margin-top: 4px; color: var(--gcf-muted); font-size: 12px; }
   #gcf-root .gcf-return .gcf-primary { margin-top: auto; }
 
-  #gcf-root .gcf-overlay { position: absolute; inset: 0; z-index: 30; display: flex; align-items: flex-end; background: var(--gcf-screen); }
+  #gcf-root .gcf-overlay {
+    position: fixed;
+    inset: auto;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: var(--gs-max-width);
+    transform: translateX(-50%);
+    z-index: var(--gs-z-sheet);
+    display: flex;
+    align-items: flex-end;
+    background: var(--gcf-screen);
+  }
   #gcf-root .gcf-overlay[hidden] { display: none; }
   #gcf-root .gcf-sheet { width: 100%; max-height: calc(100% - 28px); padding: 11px 18px 24px; overflow-y: auto; border-radius: 29px 29px 0 0; background: var(--gcf-surface); box-shadow: 0 -18px 48px var(--gcf-shadow); }
   #gcf-root .gcf-handle { width: 42px; height: 4px; margin: 0 auto 13px; border-radius: 999px; background: var(--gcf-line); }

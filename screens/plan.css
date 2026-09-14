@@ -312,7 +312,7 @@
       left:50%;
       width:100%;
       max-width:var(--gs-max-width);
-      z-index:10;
+      z-index:var(--gs-z-sheet);
       background:rgba(16,17,15,.33);
       display:flex;
       align-items:flex-end;

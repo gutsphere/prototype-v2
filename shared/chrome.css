@@ -45,6 +45,7 @@ html[data-embed="1"] #app {
 html[data-embed="1"] #app {
   display: flex;
   flex-direction: column;
+  isolation: isolate;
 }
 
 html[data-embed="1"] .gsp-stage {
@@ -526,25 +527,55 @@ svg.lucide {
   text-transform: uppercase;
 }
 
-/* Shared bottom sheet: covers chrome, pinned to the screen bottom. */
-#app:has(.gtc-control[open]) .gsp-stage {
+/* Shared bottom sheet: covers chrome, pinned to the screen bottom.
+   Embed mode scrolls .gsp-stage (overflow-y: auto). That scroll container
+   traps position:fixed sheets in a stacking context below .gsp-app-nav,
+   which is a later sibling with transform + z-index. Raising the stage
+   (not only lowering the nav) is required so the sheet paints in front. */
+html:is(
+  :has(.gtc-control[open]),
+  :has(.gsp-transient-layer:not([hidden])),
+  :has(.gts-sheet-layer:not([hidden])),
+  :has(.gcf-overlay:not([hidden])),
+  :has(.gpm-overlay.is-open)
+) .gsp-stage {
   position: relative;
-  z-index: var(--gs-z-sheet);
+  z-index: calc(var(--gs-z-chrome) + 1);
 }
 
-#app:has(.gsp-transient-layer:not([hidden])) .gsp-app-header,
-#app:has(.gsp-transient-layer:not([hidden])) .gsp-app-nav,
-#app:has(.gts-sheet-layer:not([hidden])) .gsp-app-header,
-#app:has(.gts-sheet-layer:not([hidden])) .gsp-app-nav,
-body:has(.gts-sheet-layer:not([hidden])) .gsp-app-header,
-body:has(.gts-sheet-layer:not([hidden])) .gsp-app-nav {
+html:is(
+  :has(.gtc-control[open]),
+  :has(.gsp-transient-layer:not([hidden])),
+  :has(.gts-sheet-layer:not([hidden])),
+  :has(.gcf-overlay:not([hidden])),
+  :has(.gpm-overlay.is-open)
+) :is(.gsp-app-header, .gsp-app-nav) {
   z-index: 0;
+  pointer-events: none;
+}
+
+html[data-embed="1"] :is(
+  .gsp-sheet-layer,
+  .gtc-sheet-layer,
+  .gts-sheet-layer,
+  .gcf-overlay,
+  .gpm-overlay
+) {
+  height: auto;
+  max-height: none;
+  top: 0;
+  bottom: 0;
+}
+
+html[data-embed="1"] :is(.gsp-sheet, .gtc-sheet, .gts-sheet, .gcf-sheet) {
+  max-height: min(86%, 100%);
 }
 
 .gsp-sheet-layer,
 #gutsphere-today-carousel .gtc-sheet-layer,
 #gutsphere-track-screen .gts-sheet-layer,
-.gts-sheet-layer {
+.gts-sheet-layer,
+#gcf-root .gcf-overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -567,6 +598,7 @@ body:has(.gts-sheet-layer:not([hidden])) .gsp-app-nav {
 
 .gsp-sheet-layer[hidden],
 .gts-sheet-layer[hidden],
+.gcf-overlay[hidden],
 .gtc-control:not([open]) > .gsp-sheet-layer,
 .gtc-control:not([open]) > .gtc-sheet-layer {
   display: none !important;

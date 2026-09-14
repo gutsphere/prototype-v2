@@ -242,7 +242,7 @@
   left: 50%;
   width: 100%;
   max-width: var(--gs-max-width);
-  height: 100dvh;
+  height: auto;
   transform: translateX(-50%);
   z-index: calc(var(--gs-z-sheet) + 20);
   margin: 0;
