@@ -130,6 +130,16 @@ html[data-embed="1"] #gutsphere-plan-generation .gpg-main::-webkit-scrollbar {
   display: none;
 }
 
+/* Allow vertical scrolling to pass to the host website in embed mode. */
+html[data-embed="1"],
+html[data-embed="1"] body,
+html[data-embed="1"] .gsp-stage,
+html[data-embed="1"] #gutsphere-plan-roadmap .gpm-main,
+html[data-embed="1"] #gutsphere-plan-generation .gpg-main,
+html[data-embed="1"] #gcf-root .gcf-view {
+  overscroll-behavior-y: auto;
+}
+
 @media (min-width: 431px) {
   #app {
     border-left: 1px solid var(--gs-color-border);
