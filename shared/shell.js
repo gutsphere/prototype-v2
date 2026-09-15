@@ -62,6 +62,12 @@ const state = {
 };
 
 const CHROMELESS = new Set(["plan-generation", "plan"]);
+const CARE_TARGETS = new Set(["selfcare", "visit", "careplan", "home"]);
+const CLINICAL_TABS = new Set(["visit", "test", "procedure"]);
+const SECTION_SELECTORS = {
+  chapters: ".gjx-chapters, [aria-label='Journey chapters']",
+  "clinical-support": '[aria-label="Browse visits, tests, and procedures"]'
+};
 
 let app;
 let currentRoute = "plan-generation";
@@ -460,20 +466,50 @@ function onClick(event) {
   }
 }
 
-function applyEmbedMode() {
+function queryParams() {
   const search = new URLSearchParams(location.search);
   const hash = location.hash;
   const hashQuery =
     hash.indexOf("?") >= 0 ? new URLSearchParams(hash.slice(hash.indexOf("?") + 1)) : null;
+  return {
+    get(name) {
+      return search.get(name) || hashQuery?.get(name) || null;
+    }
+  };
+}
+
+function applyEmbedMode() {
+  const params = queryParams();
   let framed = false;
   try {
     framed = window.self !== window.top;
   } catch {
     framed = true;
   }
-  if (search.get("embed") === "1" || (hashQuery && hashQuery.get("embed") === "1") || framed) {
+  if (params.get("embed") === "1" || framed) {
     document.documentElement.dataset.embed = "1";
   }
+}
+
+function applyLaunchDestination() {
+  const params = queryParams();
+  const careTargetRaw = params.get("careTarget");
+  const careTarget = CARE_TARGETS.has(careTargetRaw) ? careTargetRaw : undefined;
+  const clinicalTab = params.get("clinicalTab");
+  const section = params.get("section");
+  const initial = parseHash();
+
+  showRoute(initial, { careTarget });
+
+  if (CLINICAL_TABS.has(clinicalTab)) {
+    document.querySelector(`[data-clinical-tab="${clinicalTab}"]`)?.click();
+  }
+
+  requestAnimationFrame(() => {
+    const selector = SECTION_SELECTORS[section];
+    const node = selector ? document.querySelector(selector) : null;
+    node?.scrollIntoView({ block: "start" });
+  });
 }
 
 export function boot(data) {
@@ -517,9 +553,8 @@ export function boot(data) {
       };
       window.addEventListener("hashchange", onLocation);
       window.addEventListener("popstate", onLocation);
-      const initial = parseHash();
-      showRoute(initial);
-      if (!location.hash) setHash(initial, false);
+      applyLaunchDestination();
+      if (!location.hash) setHash(parseHash(), false);
       refreshIcons();
     })
     .catch((error) => {
